@@ -165,8 +165,8 @@ public class Runigram {
 
 	for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            int x = (int) (i * originalWidth / (double) width); // Índice x original
-            int y = (int) (j * originalHeight / (double) height); // Índice y original
+            int y = (int) (i * originalWidth / (double) width); // Índice x original
+            int x = (int) (j * originalHeight / (double) height); // Índice y original
             scaledImage [i][j] = image[x][y]; // Asignar color del píxel correspondiente
         }
     }
@@ -214,7 +214,9 @@ public class Runigram {
 	for (int i = 0; i < numRows; i++) {
         for (int j = 0; j < numCols; j++) {
             
-            blendImage[i][j] = blend(image1[i][j], image2[i][j], alpha);
+            Color color1 = image1[i][j];
+            Color color2 = image2[i][j];
+            blendImage[i][j] = blend(color1, color2, alpha);
         }
     }
 
